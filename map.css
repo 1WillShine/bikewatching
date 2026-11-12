@@ -1,0 +1,180 @@
+html,
+body {
+  height: 100%;
+}
+
+#map {
+  flex: 1;
+  width: 100%;
+  min-height: 70vh;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+#map svg {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Color variables for traffic flow */
+:root {
+  --color-departures: steelblue;
+  --color-arrivals: darkorange;
+}
+
+/* Dynamically blend departure and arrival colors using color-mix in oklch */
+#map circle,
+.legend > div {
+  --color: color-mix(
+    in oklch,
+    var(--color-departures) calc(100% * var(--departure-ratio)),
+    var(--color-arrivals)
+  );
+}
+
+#map circle {
+  fill: var(--color);
+  fill-opacity: 0.6;
+  stroke: white;
+  stroke-width: 1;
+  pointer-events: auto;
+  transition: stroke 150ms ease, fill-opacity 150ms ease;
+}
+
+#map circle:hover {
+  stroke: #222;
+  stroke-width: 2;
+  fill-opacity: 0.95;
+}
+
+/* Visual Legend (Step 6.2) */
+.legend {
+  display: flex;
+  margin-block: 1em;
+  gap: 1px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.legend > div {
+  flex: 1;
+  background-color: var(--color);
+  color: white;
+  padding: 0.55em 1em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.legend > div:first-child {
+  text-align: left;
+}
+
+.legend > div:nth-child(2) {
+  text-align: center;
+}
+
+.legend > div:last-child {
+  text-align: right;
+}
+
+/* Token Required Modal / Banner */
+.token-modal {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(4px);
+  padding: 1.5rem;
+}
+
+.token-card {
+  background: #ffffff;
+  color: #1e293b;
+  max-width: 520px;
+  width: 100%;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.token-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.token-card h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.token-card p {
+  margin: 0 0 1rem 0;
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.token-card ol {
+  margin: 0 0 1.25rem 0;
+  padding-left: 1.25rem;
+  color: #334155;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.token-card ol a {
+  color: steelblue;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.token-card form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.token-card input {
+  flex: 1;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
+.token-card button {
+  padding: 0.65rem 1.25rem;
+  background: steelblue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.token-card button:hover {
+  background: #2b6cb0;
+}
+
+.token-card small {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.8rem;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bikewatching</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <!-- Mapbox GL JS CSS -->
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet" />
+  <link rel="stylesheet" href="global.css" />
+  <link rel="stylesheet" href="map.css" />
+  <!-- Load map.js as ES module -->
+  <script src="map.js" type="module"></script>
+</head>
+<body>
+  <header>
+    <h1>🚴🏼‍♀️ Bikewatching</h1>
+    <label for="time-slider">
+      Filter by time:
+      <input id="time-slider" type="range" min="-1" max="1440" value="-1" />
+      <time id="selected-time"></time>
+      <em id="any-time">(any time)</em>
+    </label>
+  </header>
+
+  <div id="map">
+    <svg></svg>
+    <!-- Token Setup Banner for when token is missing/unauthorized -->
+    <div id="token-modal" class="token-modal" style="display: none;">
+      <div class="token-card">
+        <div class="token-icon">🗺️</div>
+        <h2>Mapbox Access Token Required</h2>
+        <p>Lab 7 requires a free Mapbox public access token to render the streets basemap and bike traffic data.</p>
+        <ol>
+          <li>Sign in or create a free account at <a href="https://account.mapbox.com/" target="_blank" rel="noopener">account.mapbox.com</a></li>
+          <li>Copy your <strong>Default public token</strong> (it begins with <code>pk.</code>)</li>
+          <li>Paste it below to load your map:</li>
+        </ol>
+        <form id="token-form">
+          <input type="text" id="token-input" placeholder="pk.eyJ1..." required autocomplete="off" />
+          <button type="submit">Load Map</button>
+        </form>
+        <small>The token is saved to your browser so your map loads automatically on next visit.</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="legend">
+    <div style="--departure-ratio: 1">More departures</div>
+    <div style="--departure-ratio: 0.5">Balanced</div>
+    <div style="--departure-ratio: 0">More arrivals</div>
+  </div>
+</body>
+</html>

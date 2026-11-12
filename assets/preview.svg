@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="routeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#32D400" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#bgGrad)" rx="10" />
+
+  <path d="M0,100 Q150,90 300,120 T600,110" stroke="#334155" stroke-width="1.5" fill="none" opacity="0.6" />
+  <path d="M0,200 Q200,220 400,190 T600,210" stroke="#334155" stroke-width="1.5" fill="none" opacity="0.6" />
+  <path d="M0,320 Q220,300 420,330 T600,310" stroke="#334155" stroke-width="1.5" fill="none" opacity="0.6" />
+  <path d="M120,0 Q110,180 130,400" stroke="#334155" stroke-width="1.5" fill="none" opacity="0.6" />
+  <path d="M280,0 Q290,190 270,400" stroke="#334155" stroke-width="1.5" fill="none" opacity="0.6" />
+  <path d="M460,0 Q450,210 470,400" stroke="#334155" stroke-width="1.5" fill="none" opacity="0.6" />
+
+  <path d="M0,160 C120,150 180,240 320,230 C440,220 500,160 600,150 L600,190 C500,200 440,260 320,270 C180,280 120,190 0,200 Z" fill="#1e3a5f" opacity="0.75" />
+
+  <path d="M30,130 Q160,110 270,180 T540,160" stroke="url(#routeGrad)" stroke-width="4.5" fill="none" stroke-linecap="round" />
+  <path d="M80,340 Q220,280 340,300 T570,260" stroke="url(#routeGrad)" stroke-width="4" fill="none" stroke-linecap="round" />
+  <path d="M180,50 Q230,190 240,350" stroke="url(#routeGrad)" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-dasharray="6,4" />
+  <path d="M410,40 Q390,210 430,360" stroke="url(#routeGrad)" stroke-width="3.5" fill="none" stroke-linecap="round" />
+
+  <circle cx="140" cy="120" r="14" fill="#4682b4" fill-opacity="0.85" stroke="#ffffff" stroke-width="2" />
+  <circle cx="210" cy="165" r="22" fill="#d97706" fill-opacity="0.85" stroke="#ffffff" stroke-width="2.5" />
+  <circle cx="270" cy="140" r="18" fill="#a07d6a" fill-opacity="0.85" stroke="#ffffff" stroke-width="2" />
+  <circle cx="340" cy="210" r="28" fill="#d97706" fill-opacity="0.85" stroke="#ffffff" stroke-width="3" />
+  <circle cx="380" cy="150" r="16" fill="#4682b4" fill-opacity="0.85" stroke="#ffffff" stroke-width="2" />
+  <circle cx="450" cy="220" r="20" fill="#a07d6a" fill-opacity="0.85" stroke="#ffffff" stroke-width="2" />
+  <circle cx="490" cy="170" r="12" fill="#4682b4" fill-opacity="0.85" stroke="#ffffff" stroke-width="1.5" />
+  <circle cx="230" cy="290" r="26" fill="#d97706" fill-opacity="0.85" stroke="#ffffff" stroke-width="3" />
+  <circle cx="300" cy="330" r="15" fill="#4682b4" fill-opacity="0.85" stroke="#ffffff" stroke-width="2" />
+  <circle cx="400" cy="310" r="24" fill="#4682b4" fill-opacity="0.85" stroke="#ffffff" stroke-width="2.5" />
+  <circle cx="510" cy="280" r="17" fill="#d97706" fill-opacity="0.85" stroke="#ffffff" stroke-width="2" />
+
+  <rect x="25" y="25" width="235" height="48" rx="8" fill="#0f172a" fill-opacity="0.9" stroke="#334155" stroke-width="1.5" />
+  <text x="42" y="56" fill="#ffffff" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="700">🚴🏼‍♀️ Bikewatching</text>
+</svg>
