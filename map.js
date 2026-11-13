@@ -8,13 +8,12 @@ console.log('Mapbox GL JS Loaded:', mapboxgl);
 
 // --- Step 1.0 & 1.3: Mapbox Access Token Configuration ---
 // Priority: 1) token in localStorage, 2) configured personal token below
-const configuredToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
+const configuredToken = 'pk.eyJ1Ijoid2lzaGluIiwiYSI6ImNtd2U0cWQ3ajAweTgyeXBybmMxbWp6NWgifQ.bacU5yYRe6So3-QJp71hyA';
 const savedToken = localStorage.getItem('mapbox_token');
 
 const effectiveToken = (savedToken && savedToken.startsWith('pk.'))
   ? savedToken
-  : (configuredToken.startsWith('pk.') && configuredToken !== 'YOUR_MAPBOX_ACCESS_TOKEN' ? configuredToken : '');
-
+    : (configuredToken.startsWith('pk.') ? configuredToken : '');
 // DOM elements for token setup modal
 const tokenModal = document.getElementById('token-modal');
 const tokenForm = document.getElementById('token-form');
